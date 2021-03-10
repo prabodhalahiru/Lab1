@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q3</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        var vehicleName = 'SUZUKI';
+
+        function printvehicleName(){
+            console.log(this.vehicleName);
+        }
+
+        var vehicle = {
+            vehicleName : 'NISSAN',
+            getVehicleName : function (){
+                return function (){
+                    console.log(this.vehicleName);
+                };
+            }
+        }
+
+        printvehicleName();
+
+        var execute = vehicle.getVehicleName();
+        execute = execute.bind(vehicle);
+        execute();
+
+    </script>
+
+</body>
+</html>
